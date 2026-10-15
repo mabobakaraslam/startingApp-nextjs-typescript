@@ -1,0 +1,17 @@
+
+-----------------------------------------
+SEO Settings
+-----------------------------------------
+1. read following prompt for chatGPT in account of m.abobakar.aslam@gmail.com
+    SEO - edu2skill
+
+
+-----------------------------------------
+DLD Lab course
+-----------------------------------------
+1. tutorials for DLD Lab
+2. Lessons for DLD Lab
+    installation
+    logic gates
+    etc
+    

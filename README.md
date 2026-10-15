@@ -1,2 +1,1 @@
-# startingApp-nextjs-typescript
-Starting Application - NextJS - TypeScript
+# Starting Application - NextJS TypeScript
