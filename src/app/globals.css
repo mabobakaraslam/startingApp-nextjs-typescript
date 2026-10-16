@@ -1,1 +1,413 @@
 @import "tailwindcss";
+@tailwind utilities;
+
+
+:root {
+
+  /**************************************************
+  Brand / Primary colors
+  **************************************************/
+  --colorPrimaryLight: #E4FAFA;
+  --colorPrimary: #078B91;
+  --colorPrimarySecondary: #122527;
+  --colorPrimarySoft: #D2F2F3;
+
+
+  /**************************************************
+  Accent / Highlighting colors
+  **************************************************/
+  --colorAccentLight: #EAF7C9;
+  --colorAccent: #8BAF27;
+  --colorAccent3: #F4FBDD;
+
+
+  /**************************************************
+  Dark themes colors
+  **************************************************/
+  --colorPrimaryDark: #091719;
+  --colorPrimarySecondaryDark: var(--colorPrimarySecondary);
+  --colorBorderDark: #244044;
+
+
+  /**************************************************
+  Neutral
+  **************************************************/
+  --colorWhite: #FFFFFF;
+  --colorText: #102527;
+  --colorTextMuted: #607578;
+  --colorBorder: #D9E7E8;
+
+
+  /**************************************************
+  Not part of Brand Colors
+  **************************************************/
+  /*
+  --colorSuccess: #159A6C;
+  --colorError: #D64545;
+  --colorWarning: #D99A24;
+
+  --colorSuccess: #4FAF8A;
+  --colorError: #D96B6B;
+  --colorWarning: #D9AD5C;
+  */
+
+  --colorSuccess: #70BFA3;
+  --colorError: #E28A8A;
+  --colorWarning: #E0BF7A;
+
+
+  /**************************************************
+  Font Family
+  **************************************************/
+  --font-family-base: Verdana, sans-serif;
+  --font-family-heading: Georgia, serif;
+  --font-family-mono: "Courier New", monospace;
+  --font-family-quotes-base: "Open Sans", sans-serif;
+  --font-family-quotes-heading: "Times New Roman", serif;
+
+
+  /**************************************************
+  Light Mode
+  **************************************************/
+  --background: var(--colorPrimaryLight);
+  --foreground: var(--colorText);
+
+  --backgroundSecondary: var(--colorPrimarySoft);
+
+  --navBackground: var(--colorPrimarySecondary);
+  --navForeground: var(--colorPrimaryLight);
+
+  --navHoverBackground: var(--colorPrimary);
+  --navHoverForeground: var(--colorWhite);
+
+  --buttonBackground: var(--colorPrimary);
+  --buttonForeground: var(--colorWhite);
+  --buttonHoverBackground: var(--colorPrimarySecondary);
+
+  --cardBackground: var(--colorWhite);
+  --cardForeground: var(--colorText);
+
+  --cardBorder: var(--colorBorder);
+  --colorBorder: var(--colorBorderDark);
+
+  --glowPrimary: color-mix(in srgb, var(--colorPrimary) 15%, transparent);
+}
+
+html.dark {
+  /**************************************************
+  Dark Mode
+  **************************************************/
+
+  --background: var(--colorPrimaryDark);
+  --foreground: var(--colorPrimaryLight);
+
+  --backgroundSecondary: var(--colorPrimarySecondaryDark);
+
+  --navBackground: var(--colorPrimarySecondary);
+  --navForeground: var(--colorPrimaryLight);
+
+  --navHoverBackground: var(--colorPrimary);
+  --navHoverForeground: var(--colorWhite);
+
+  --buttonBackground: var(--colorPrimary);
+  --buttonForeground: var(--colorWhite);
+  --buttonHoverBackground: var(--colorAccent);
+
+  --cardBackground: var(--colorPrimarySecondary);
+  --cardForeground: var(--colorPrimaryLight);
+
+  --cardBorder: var(--colorBorderDark);
+
+  --colorBorder: var(--colorPrimaryLight);
+
+  --glowPrimary: color-mix(in srgb, var(--colorPrimary) 15%, transparent);
+}
+
+
+body {
+  background: var(--background);
+  color: var(--foreground);
+
+  font-family: var(--font-family-base);
+  font-weight: 200;
+  font-size: 15px;
+  line-height: 1.5;
+}
+
+@layer base {
+  h1 {font-size: 36px;}
+  h2 {font-size: 30px;}
+  h3 {font-size: 24px;}
+  h4 {font-size: 20px;}
+  h5 {font-size: 14px;}
+  h6 {font-size: 8px;}
+  p {font-size: 16px;}
+}
+
+.taglineTextColor {
+  color: var(--colorTextMuted);
+}
+
+.taglineBackground {
+  background-color: var(--colorPrimarySoft);
+  color: var(--colorPrimary);
+  border: 1px solid var(--colorPrimary);
+}
+
+
+
+.brandAccentLine {
+  background-color: var(--colorPrimary);
+}
+
+
+
+.iconBtnDiv {
+  /*border: 1px solid var(--colorBorder);*/
+  color: var(--colorPrimary);
+  transition: all 400ms;
+}
+
+.iconBtnDiv:hover {
+  /*border: 1px solid var(--colorPrimary);*/
+  background-color: var(--colorPrimary);
+  color: var(--colorPrimarySoft);
+  transform: translateY(-0.3rem);
+}
+
+.iconInGroup {
+  border: 1px solid color-mix(in srgb, var(--colorPrimary) 30%, transparent);
+  background-color: var(--colorPrimaryLight);
+  color: var(--colorPrimary);
+  transition: all 300ms;
+}
+
+.iconInGroupOuterDiv:hover .iconInGroup {
+  border-color: var(--colorPrimary);
+  background-color: var(--colorPrimary);
+  color: var(--colorPrimarySoft);
+}
+
+
+
+
+
+
+
+nav,
+.mobile-menu {
+  background-color: var(--navBackground);
+  border-bottom: 1px solid var(--colorBorderDark);
+}
+
+
+nav a,
+nav button {
+  background-color: transparent;
+  color: var(--navForeground);
+}
+
+
+nav a:hover,
+nav button:hover {
+  background-color: var(--navHoverBackground);
+  color: var(--navHoverForeground);
+}
+
+
+nav a.active,
+nav button.active {
+  color: var(--navHoverForeground);
+}
+
+
+nav a.logo-link,
+nav a.logo-link:hover {
+  background-color: transparent;
+  color: var(--navForeground);
+}
+
+
+nav .dropdown-menu {
+  background-color: var(--navBackground);
+}
+
+
+nav .dropdown-link {
+  color: var(--navForeground);
+}
+
+
+nav .dropdown-link:hover {
+  background-color: var(--navHoverBackground);
+  color: var(--navHoverForeground);
+}
+
+
+
+.inputDiv {
+  /*border-color: var(--colorBorder);*/
+  border: 1px solid color-mix(in srgb, var(--colorBorder) 35%, transparent);
+  transition: border-color 300ms;
+}
+
+.inputDiv:focus-within {
+  border-color: var(--colorPrimary);
+  box-shadow: 0 0 0 2px color-mix(in srgb, var(--colorPrimary) 20%, transparent);
+}
+
+.inputIcon {
+  color: var(--colorPrimary);
+}
+
+input {
+  color: var(--colorPrimary);
+  background-color: transparent;
+  /*transition: color 300ms;*/
+}
+
+input::placeholder {
+  color: var(--colorTextMuted);
+}
+
+footer .inputDiv {
+  /*border-color: var(--colorPrimaryLight);*/
+  border: 1px solid color-mix(in srgb, var(--colorPrimaryLight) 25%, transparent);
+}
+
+select {
+  color: var(--colorPrimary);
+  background-color: transparent;
+}
+
+select option {
+  color: var(--colorPrimary);
+  /*background-color: var(--cardBackground);*/
+  background-color: transparent;
+}
+
+select option[value=""] {
+  color: var(--colorTextMuted);
+}
+
+
+
+
+
+button {
+  transition: all 300ms;
+  background-color: var(--buttonBackground);
+  color: var(--buttonForeground);
+  border-radius: var(--radius-sm);
+
+  font-weight: 700;
+  --tw-font-weight: 700;
+}
+
+button:hover {
+  background-color: var(--buttonHoverBackground);
+}
+
+
+.btnOutline {
+  border: 1px solid color-mix(in srgb, var(--colorBorder) 35%, transparent);
+  background-color: var(--background);
+  color: var(--foreground);
+  transition: all 400ms;
+}
+
+.btnOutline:hover {
+  border-color: var(--colorPrimary);
+  color: var(--colorPrimarySoft);
+  box-shadow: 0 4px 15px color-mix(in srgb, var(--colorPrimary) 20%, transparent);
+  transform: translateY(-0.2rem);
+}
+
+/*
+.btnXS {font-size: 10px;}
+.btnS {font-size: 12px;}
+.btn {font-size: 14px;}
+.btnL {font-size: 16px;}
+.btnXL {font-size: 18px;}
+.btn2XL {font-size: 20px;}
+*/
+
+
+.card {
+  border: 1px solid color-mix(in srgb, var(--colorBorder) 35%, transparent);
+  background-color: var(--cardBackground);
+  transition: all 400ms;
+}
+
+.card:hover {
+  border-color: var(--colorPrimary);
+  box-shadow: 0 4px 15px color-mix(in srgb, var(--colorPrimary) 20%, transparent);
+  /*box-shadow: 0 6px 18px color-mix(in srgb, var(--colorDark) 15%, transparent);*/
+  transform: translateY(-0.375rem);
+}
+
+
+.cardNote {
+  border: 1px solid var(--colorPrimary);
+}
+
+
+table tbody tr:hover {
+  background-color: var(--colorAccentLight) !important;
+  transition: background-color 0.2s ease;
+}
+
+
+.headTable {
+  background-color: var(--colorPrimary);
+  color: var(--colorWhite);
+}
+
+
+
+footer {
+  background-color: var(--navBackground);
+  border-top: 1px solid var(--colorBorderDark);
+}
+footer a,
+footer button,
+footer p {
+  background-color: transparent;
+  color: var(--colorTextMuted);
+}
+footer a.logo-link,
+footer a.logo-link:hover {
+  background-color: transparent;
+  color: var(--navForeground);
+  /*text-decoration: none;*/
+}
+footer h2 {
+  color: var(--navForeground);
+  /*text-decoration: underline;*/
+}
+
+
+/**************************************************
+Scroll Reveal
+**************************************************/
+
+.reveal {
+  opacity: 0;
+  transform: translateY(32px);
+  transition:
+    opacity 700ms ease,
+    transform 700ms ease;
+}
+
+.reveal.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .reveal {
+    opacity: 1;
+    transform: none;
+    transition: none;
+  }
+}
